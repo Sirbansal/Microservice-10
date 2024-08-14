@@ -61,17 +61,17 @@ eksctl version
 ## Create EKS CLUSTER
 
 ```bash
-eksctl create cluster --name=EKS-1 \
+eksctl create cluster --name=E-commerce \
                       --region=ap-south-1 \
                       --zones=ap-south-1a,ap-south-1b \
                       --without-nodegroup
 
 eksctl utils associate-iam-oidc-provider \
     --region ap-south-1 \
-    --cluster EKS-1 \
+    --cluster E-commerce \
     --approve
 
-eksctl create nodegroup --cluster=EKS-1 \
+eksctl create nodegroup --cluster=E-commerce \
                        --region=ap-south-1 \
                        --name=node2 \
                        --node-type=t3.medium \
@@ -80,7 +80,7 @@ eksctl create nodegroup --cluster=EKS-1 \
                        --nodes-max=4 \
                        --node-volume-size=20 \
                        --ssh-access \
-                       --ssh-public-key=DevOps \
+                       --ssh-public-key=Instance \
                        --managed \
                        --asg-access \
                        --external-dns-access \
